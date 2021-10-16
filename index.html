@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Food log & plan</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://kit.fontawesome.com/2a96163556.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header__title">
+      <h1>Food log & plan</h1>
+    </div>
+    <div class="header__btns">
+      <button class="btn">Reset Everything!</button>
+    </div>
+  </header>
+  <main>
+    <section class="post">
+      <form name="Post" class="post__contant">
+        <fieldset>
+          <div class="post__title">
+            <input id="date" name="date" type="date" class="post__date" value="2021-10-16" min="2018-01-01"
+              max="2999-12-31" />
+            <!-- <input name="date" type="text" value="Sat" class="post__day" disabled> -->
+            <span class="post__day">Sat</span>
+          </div>
+          <!-- Breakfast -->
+          <div class="items">
+            <div class="breakfast item">
+              <div class="item__title">
+                <label for="Breakfast">
+                  Breakfast
+                </label>
+                <div class="item__emoji">
+                  <label>
+                    <input type="radio" name="b_emoji" value="love" class="item__emoji">
+                    <img src="./src/inloveim.png" alt="in love emoji">
+                  </label>
+                  <label>
+                    <input type="radio" name="b_emoji" value="smile" class="item__emoji">
+                    <img src="./src/smileim.png" alt="smile emoji">
+                  </label>
+                  <label>
+                    <input type="radio" name="b_emoji" value="depressed" class="item__emoji">
+                    <img src="./src/depressedim.png" alt="depressed emoji">
+                  </label>
+                </div>
+              </div>
+              <div class="item__input">
+                <input name="Breakfast" type="text">
+              </div>
+            </div>
+            <!-- Lunch -->
+            <div class="lunch item">
+              <div class="item__title">
+                <label for="Lunch">
+                  Lunch
+                </label>
+                <div class="item__emoji">
+                  <label>
+                    <input type="radio" name="l_emoji" value="love" class="item__emoji">
+                    <img src="./src/inloveim.png" alt="in love emoji">
+                  </label>
+                  <label>
+                    <input type="radio" name="l_emoji" value="smile" class="item__emoji">
+                    <img src="./src/smileim.png" alt="smile emoji">
+                  </label>
+                  <label>
+                    <input type="radio" name="l_emoji" value="depressed" class="item__emoji">
+                    <img src="./src/depressedim.png" alt="depressed emoji">
+                  </label>
+                </div>
+              </div>
+              <div class="item__input">
+                <input name="Lunch" type="text">
+              </div>
+            </div>
+            <!-- Dinner -->
+            <div class="dinner item">
+              <div class="item__title">
+                <label for="Dinner">
+                  Dinner
+                </label>
+                <div class="item__emoji">
+                  <label>
+                    <input type="radio" name="d_emoji" value="love" class="item__emoji">
+                    <img src="./src/inloveim.png" alt="in love emoji">
+                  </label>
+                  <label>
+                    <input type="radio" name="d_emoji" value="smile" class="item__emoji">
+                    <img src="./src/smileim.png" alt="smile emoji">
+                  </label>
+                  <label>
+                    <input type="radio" name="d_emoji" value="depressed" class="item__emoji">
+                    <img src="./src/depressedim.png" alt="depressed emoji">
+                  </label>
+                </div>
+              </div>
+              <div class="item__input">
+                <input name="Dinner" type="text">
+              </div>
+            </div>
+            <!-- nightSnack -->
+            <div class="nightSnack item">
+              <div class="item__title">
+                <label for="NightSnack">
+                  Late-night snack
+                </label>
+              </div>
+              <div class="item__input">
+                <input name="NightSnack" type="text">
+              </div>
+            </div>
+            <!-- Snacks -->
+            <div class="snacks item">
+              <div class="item__title">
+                <label for="Snacks">
+                  Snacks
+                </label>
+              </div>
+              <div class="item__input">
+                <input name="Snacks" type="text">
+              </div>
+            </div>
+            <!-- Drinks -->
+            <div class="drinks item">
+              <div class="item__title">
+                <label for="Drinks">
+                  Drinks
+                </label>
+              </div>
+              <div class="item__input">
+                <input name="Drinks" type="text">
+              </div>
+            </div>
+            <!-- Water -->
+            <div class="water item">
+              <div class="item__icons">
+                <label>
+                  <input type="checkbox" name="wicon" id="w1"><i class="fas fa-glass-whiskey"></i>
+                </label>
+                <label>
+                  <input type="checkbox" name="wicon" id="w2"><i class="fas fa-glass-whiskey"></i>
+                </label>
+                <label>
+                  <input type="checkbox" name="wicon" id="w3"><i class="fas fa-glass-whiskey"></i>
+                </label>
+                <label>
+                  <input type="checkbox" name="wicon" id="w4"><i class="fas fa-glass-whiskey"></i>
+                </label>
+              </div>
+            </div>
+            <!-- Coffee -->
+            <div class="coffee item">
+              <div class="item__icons">
+                <label>
+                  <input type="checkbox" name="wicon" id="c1"><i class="fas fa-mug-hot"></i>
+                </label>
+                <label>
+                  <input type="checkbox" name="wicon" id="c2"><i class="fas fa-mug-hot"></i>
+                </label>
+                <label>
+                  <input type="checkbox" name="wicon" id="c3"><i class="fas fa-mug-hot"></i>
+                </label>
+                <label>
+                  <input type="checkbox" name="wicon" id="c4"><i class="fas fa-mug-hot"></i>
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- POST BTN -->
+          <div class="post__btns">
+            <button class="btn">Save</button>
+            <input type="reset" value="Clear" class="btn">
+          </div>
+        </fieldset>
+      </form>
+    </section>
+
+    <section class="posts"></section>
+
+  </main>
+  <!-- <script src="./main.js"></script> -->
+</body>
+
+</html>
