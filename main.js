@@ -31,6 +31,12 @@
   }
   resetPostsBtn.addEventListener('click', resetLocalStorage);
   // * POST 부분
+  // ** Post date 선택에 따른 day 변화
+  date.addEventListener('change', () => {
+    const dateValue = date.value;
+    day.innerHTML = changeDay(dateValue);
+  });
+
   // ** input emoji 한개만 클릭
   const inputEmojis = document.querySelectorAll('.item__emoji');
   for (const inputEmoji of inputEmojis) {
@@ -137,6 +143,13 @@
     setTodayDate();
   }
 
+  function changeDay(date) {
+    // ex) dateValue = 2021-10-21
+    const newDate = new Date(date);
+    const newday = newDate.toLocaleDateString('en-US', { weekday: 'long' });
+    return newday.slice(0, 3);
+  }
+
   function setTodayDate() {
     const today = new Date();
     const todayDate =
@@ -149,6 +162,6 @@
       weekday: 'long',
     });
     date.value = todayDate;
-    day.innerHTML = todayDay;
+    day.innerHTML = todayDay.slice(0, 3);
   }
 })();
