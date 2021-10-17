@@ -230,14 +230,32 @@ main {
   background-color: var(--bg-light);
   border-radius: 20px;
   padding: 20px;
-  margin:  0 40px 40px 40px;
+  margin: 0 40px 40px 40px;
+  position: relative;
 }
+.posted__delete {
+  visibility: hidden;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  padding: 10px;
+  background: none;
+}
+.posted__delete i{
+  color: rgb(188, 188, 188);
+}
+
+.posted-post:hover .posted__delete{
+  visibility: visible;
+}
+
 .posted__title {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 .posted__date {

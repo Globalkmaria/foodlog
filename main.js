@@ -170,6 +170,17 @@
     postedPost.setAttribute('id', id);
     postedPost.setAttribute('class', 'posted-post');
 
+    const postedDelete = document.createElement('button');
+    postedDelete.setAttribute('class', 'posted__delete');
+    postedDelete.innerHTML = '<i class="fas fa-trash"></i>';
+    postedDelete.addEventListener('click', removePost);
+    function removePost() {
+      postedPost.remove();
+      posts = posts.filter((p) => p.id != id);
+      saveInLocalStorage(posts);
+    }
+    postedPost.append(postedDelete);
+
     const postedTitle = document.createElement('div');
     postedTitle.setAttribute('class', 'posted__title');
     postedTitle.innerHTML = `
