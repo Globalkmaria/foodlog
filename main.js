@@ -41,6 +41,20 @@
     const post = getPostValue();
     resetPost();
   }
+  function addPostinPosts(post) {
+    const postDate = post.date;
+    let left = 0;
+    let right = posts.length - 1;
+    while (left <= right) {
+      let mid = Math.floor((left + right) / 2);
+      if (posts[mid].date < postDate) {
+        right = mid - 1;
+      } else {
+        left = mid + 1;
+      }
+    }
+    posts.splice(left, 0, post);
+  }
   function getPostValue() {
     const elements = document.querySelector('#post__form').elements;
     let post = {
