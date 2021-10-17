@@ -80,6 +80,7 @@
   function resetPost() {
     const Postform = document.querySelector('#post__form');
     Postform.reset();
+    setTodayDate();
   }
   // * 초기설정
   function setTodayDate() {
