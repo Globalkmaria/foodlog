@@ -26,6 +26,10 @@
     const newday = newDate.toLocaleDateString('en-US', { weekday: 'long' });
     day.innerHTML = newday.slice(0, 3);
   }
+  function resetPost() {
+    const Postform = document.querySelector('#post__form');
+    Postform.reset();
+  }
   // * 초기설정
   function setTodayDate() {
     const today = new Date();
