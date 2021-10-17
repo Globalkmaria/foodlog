@@ -84,6 +84,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: 500ms;
 }
 
 .post {
@@ -95,8 +96,17 @@ main {
   background-color: rgba(256, 256, 256, 0.9);
   border-radius: 20px;
   margin-top: 20px;
+  opacity: 1;
 }
-
+.fall{
+  animation: 1s linear falldown;
+}
+@keyframes falldown{
+  100%{
+    transform: scale(0.5) translateY(600px);
+    opacity: 0;
+  }
+}
 .post__contant {
   width: 100%;
 }

@@ -5,6 +5,7 @@
   const postResetBtn = document.querySelector('#post__clear');
   const resetPostsBtn = document.querySelector('#reset-posts');
   const postsDiv = document.querySelector('.posts');
+  const postDiv = document.querySelector('.post');
   const inputEmojis = document.querySelectorAll('.item__emoji');
 
   let posts = [];
@@ -119,6 +120,10 @@
       alert('You have a log for this date!');
       return;
     }
+    postDiv.classList.add('fall');
+    postDiv.addEventListener('animationend', () => {
+      postDiv.classList.remove('fall');
+    });
     // 날짜 순서에 맞게 추가하기 내림차순, 이분탐색
     const addIndexPoint = searchPostAddIndex(post.date);
     posts.splice(addIndexPoint, 0, post);
