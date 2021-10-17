@@ -44,6 +44,8 @@
   function getPostValue() {
     const elements = document.querySelector('#post__form').elements;
     let post = {
+      date: 20211016,
+      id: nextPostId++,
       Breakfast: '',
       Dinner: '',
       Drinks: '',
@@ -58,6 +60,9 @@
     };
     for (const item of elements) {
       switch (item.type) {
+        case 'date':
+          post[item.name] = Number(item.value.replace(/-/g, ''));
+          break;
         case 'text':
           post[item.name] = item.value;
           break;
