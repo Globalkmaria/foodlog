@@ -6,6 +6,13 @@
   const date = document.querySelector('#post__date');
   const day = document.querySelector('#post__day');
   const postSaveBtn = document.querySelector('#post__save');
+  function getSavedPosts() {
+    posts = JSON.parse(localStorage.getItem('posts')) || [];
+    nextPostId = posts.length;
+  }
+  function saveInLocalStorage(posts) {
+    localStorage.setItem('posts', JSON.stringify(posts));
+  }
   function resetLocalStorage() {
     localStorage.setItem('posts', JSON.stringify([]));
     posts = [];
