@@ -1,5 +1,3 @@
-// 로컬 스토리지에 저장하기
-// 불러와서 정렬하는것을 고려해봐야함, 저장할때는 그냥 이어 붙이기?
 (function () {
   const date = document.querySelector('#post__date');
   const day = document.querySelector('#post__day');
@@ -269,7 +267,7 @@
     const year = date.slice(0, 4);
     const month = date.slice(4, 6);
     const day = date.slice(6);
-    return `${year}-${month}-${day}`;
+    return `${year}. ${month}. ${day}`;
   }
 
   // * Date/Day
