@@ -60,32 +60,8 @@
       }
     });
   }
-  // ** 날짜변경
-  date.addEventListener('change', changeDay);
-  function changeDay() {
-    const dateValue = date.value;
-    // ex) dateValue = 2021-10-21
-    const newDate = new Date(dateValue);
-    const newday = newDate.toLocaleDateString('en-US', { weekday: 'long' });
-    day.innerHTML = newday.slice(0, 3);
-  }
-  // ** 저장하기
-  postSaveBtn.addEventListener('click', savePost);
-  function savePost(e) {
-    e.preventDefault();
-    const post = getPostValue();
-    if (posts.find((p) => p.date === post.date)) {
-      alert('You have a log for this date!');
-      return;
-    }
-    // 날짜 순서에 맞게 추가하기 내림차순, 이분탐색
-    addPostinPosts(post);
-    saveInLocalStorage(posts);
-    resetPost();
-  }
-
-  function addPostinPosts(post) {
-    const postDate = post.date;
+  // ** Post SAVE
+  function searchPostAddIndex(postDate) {
     let left = 0;
     let right = posts.length - 1;
     while (left <= right) {
@@ -96,7 +72,7 @@
         left = mid + 1;
       }
     }
-    posts.splice(left, 0, post);
+    return left;
   }
   function getPostValue() {
     const elements = document.querySelector('#post__form').elements;
@@ -141,6 +117,30 @@
 
     return post;
   }
+
+  function savePost(e) {
+    e.preventDefault();
+    const post = getPostValue();
+    if (posts.find((p) => p.date === post.date)) {
+      nextPostId--;
+      alert('You have a log for this date!');
+      return;
+    }
+    // 날짜 순서에 맞게 추가하기 내림차순, 이분탐색
+    const addIndexPoint = searchPostAddIndex(post.date);
+    posts.splice(addIndexPoint, 0, post);
+    saveInLocalStorage(posts);
+    const newPost = makePostedPost(post);
+    if (posts.length === 1 || post.date === posts[posts.length - 1].date) {
+      postsDiv.append(newPost);
+    } else {
+      const nextPost = postsDiv.children[addIndexPoint];
+      postsDiv.insertBefore(newPost, nextPost);
+    }
+    resetPost();
+  }
+  postSaveBtn.addEventListener('click', savePost);
+
   function resetPost() {
     const Postform = document.querySelector('#post__form');
     Postform.reset();
