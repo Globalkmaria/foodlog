@@ -6,6 +6,12 @@
   const date = document.querySelector('#post__date');
   const day = document.querySelector('#post__day');
   const postSaveBtn = document.querySelector('#post__save');
+  function resetLocalStorage() {
+    localStorage.setItem('posts', JSON.stringify([]));
+    posts = [];
+    nextPostId = 0;
+  }
+  resetPostsBtn.addEventListener('click', resetLocalStorage);
   // ** input emoji 한개만 클릭
   const inputEmojis = document.querySelectorAll('.item__emoji');
   for (const inputEmoji of inputEmojis) {
