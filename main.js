@@ -3,7 +3,11 @@
   const date = document.querySelector('#post__date');
   const day = document.querySelector('#post__day');
   const postSaveBtn = document.querySelector('#post__save');
+  const postResetBtn = document.querySelector('#post__clear');
   const resetPostsBtn = document.querySelector('#reset-posts');
+  const postsDiv = document.querySelector('.posts');
+  const inputEmojis = document.querySelectorAll('.item__emoji');
+
   let posts = [];
   let nextPostId = 0;
 
@@ -141,6 +145,118 @@
     const Postform = document.querySelector('#post__form');
     Postform.reset();
     setTodayDate();
+  }
+  function makePostedPost(post) {
+    const {
+      id,
+      date,
+      Breakfast,
+      b_emoji,
+      Lunch,
+      l_emoji,
+      Dinner,
+      d_emoji,
+      NightSnack,
+      Drinks,
+      Snacks,
+      w_icon,
+      c_icon,
+    } = post;
+    const postedDate = makePostedDate(date);
+
+    const postedPost = document.createElement('div');
+    postedPost.setAttribute('id', id);
+    postedPost.setAttribute('class', 'posted-post');
+
+    const postedTitle = document.createElement('div');
+    postedTitle.setAttribute('class', 'posted__title');
+    postedTitle.innerHTML = `
+    <span class="posted__date">${postedDate}</span>
+    <span class="posted__day">${changeDay(postedDate)}</span>`;
+    postedPost.append(postedTitle);
+
+    const pitems = document.createElement('div');
+    pitems.setAttribute('class', 'pitems');
+
+    const itemWithEmoji = [
+      ['Breakfast', b_emoji, Breakfast],
+      ['Lunch', l_emoji, Lunch],
+      ['Dinner', d_emoji, Dinner],
+    ];
+    itemWithEmoji.forEach((item) => {
+      const itemDiv = document.createElement('div');
+      itemDiv.className = `pitem ${item[0].toLowerCase()}`;
+      itemDiv.innerHTML = makePitemInner1(item[0], item[1], item[2]);
+      pitems.append(itemDiv);
+    });
+
+    const itemWithOutEmoji = [
+      ['Late-night snack', NightSnack],
+      ['Snacks', Snacks],
+      ['drinks', Drinks],
+    ];
+    itemWithOutEmoji.forEach((item) => {
+      const itemDiv = document.createElement('div');
+      itemDiv.className = `pitem ${item[0].split(' ')[0].toLowerCase()}`;
+      itemDiv.innerHTML = makePitemInner2(item[0], item[1]);
+      pitems.append(itemDiv);
+    });
+
+    const icons = [
+      ['water', 'fa-glass-whiskey', w_icon],
+      ['coffee', 'fa-mug-hot', c_icon],
+    ];
+    icons.forEach((icon) => {
+      const iconDiv = document.createElement('div');
+      iconDiv.className = `pitem pitem__icons ${icon[0]}`;
+      let inner = '';
+      for (let i = 0; i < 4; i++) {
+        if (i < icon[2]) {
+          inner += `<i class="fas ${icon[1]} icon-checked"></i>`;
+        } else {
+          inner += `<i class="fas ${icon[1]}"></i>`;
+        }
+      }
+      iconDiv.innerHTML = inner;
+      pitems.append(iconDiv);
+    });
+    postedPost.append(pitems);
+    return postedPost;
+  }
+
+  function makePitemInner1(tite, emoji, text) {
+    return makePitemTitle1(tite, emoji) + makePitemText(text);
+  }
+  function makePitemInner2(tite, text) {
+    return (
+      `<div class="pitem__title"><h4>${tite}</h4></div>` + makePitemText(text)
+    );
+  }
+  function makePitemTitle1(tite, emoji) {
+    return `<div class="pitem__title"><h4>${tite}</h4>
+            <div class="pitem__emoji">
+              <img class='${
+                emoji === 'love' ? 'checked__emoji' : ''
+              }' src="./src/love.png" alt="love emoji">
+              <img class='${
+                emoji === 'smile' ? 'checked__emoji' : ''
+              }' src="./src/smile.png" alt="smile emoji">
+              <img class='${
+                emoji === 'depressed' ? 'checked__emoji' : ''
+              }' src="./src/depressed.png" alt="depressed emoji">
+              </div></div>`;
+  }
+  function makePitemText(text) {
+    return `<div class="pitem__text">
+              <span class="pitem__inner">${text}</span>
+            </div>`;
+  }
+  function makePostedDate(date) {
+    date = String(date);
+    const year = date.slice(0, 4);
+    const month = date.slice(4, 6);
+    const day = date.slice(6);
+    return `${year}-${month}-${day}`;
   }
 
   function changeDay(date) {
