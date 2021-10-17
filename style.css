@@ -68,7 +68,8 @@ header {
   font-size: 30px;
   margin: 30px 30px 0px 30px;
 }
-.header__title  h1{
+
+.header__title h1 {
   font-weight: 900;
 }
 
@@ -188,11 +189,65 @@ main {
 }
 
 .water [type=checkbox]:checked+i {
-  color: var(--water)
+  color: var(--water);
+  animation: 1s linear 0s shake;
+  transition: 500ms;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(30deg);
+  }
+
+  40% {
+    transform: rotate(-30deg);
+  }
+
+  60% {
+    transform: rotate(20deg);
+  }
+
+  80% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .coffee [type=checkbox]:checked+i {
-  color: var(--coffee)
+  color: var(--coffee);
+  animation: 1s linear 0s moveup;
+  transition: 500ms
+}
+
+@keyframes moveup {
+  0% {
+  }
+
+  20% {
+    transform: skew(15deg, 15deg);
+  }
+
+  40% {
+    transform: skew(-15deg, -15deg);
+  }
+  
+  60% {
+    transform: skew(10deg, 10deg);
+  }
+  
+  80% {
+    transform: skew(-10deg, -10deg);
+  }
+
+  100% {
+  }
 }
 
 .item__input input {
@@ -242,6 +297,7 @@ main {
   margin: 0 40px 40px 40px;
   position: relative;
 }
+
 .posted__delete {
   visibility: hidden;
   position: absolute;
@@ -251,11 +307,12 @@ main {
   padding: 10px;
   background: none;
 }
-.posted__delete i{
+
+.posted__delete i {
   color: rgb(188, 188, 188);
 }
 
-.posted-post:hover .posted__delete{
+.posted-post:hover .posted__delete {
   visibility: visible;
 }
 
