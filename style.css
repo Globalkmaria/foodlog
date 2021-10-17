@@ -5,6 +5,9 @@
   --dark-green: #1A3D2D;
   --light-green: #4f8168;
   --dark-font: #041D1D;
+  --coffee: #8d5b4c;
+  --water: #5fa8d3;
+  ;
 }
 
 /* reset */
@@ -53,6 +56,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .header__title {
@@ -69,6 +74,7 @@ header {
 /* POST */
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -123,16 +129,11 @@ main {
 .items {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-
 }
 
 .item {
   /* margin: 10px 5px 7px 5px; */
-  margin: 10px 15px 10px 10px;
-}
-
-.item {
-  margin-top: 20px;
+  margin: 20px 15px 10px 10px;
 }
 
 .item__title {
@@ -140,6 +141,7 @@ main {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
+  height: 37px;
 }
 
 .item__title label {
@@ -177,11 +179,11 @@ main {
 }
 
 .water [type=checkbox]:checked+i {
-  color: #5fa8d3;
+  color: var(--water)
 }
 
 .coffee [type=checkbox]:checked+i {
-  color: #8d5b4c;
+  color: var(--coffee)
 }
 
 .item__input input {
@@ -220,6 +222,7 @@ main {
   margin: 40px;
   background-color: wheat;
   border-radius: 20px;
+  padding-top: 40px;
 }
 
 .posted-post {
@@ -227,9 +230,8 @@ main {
   background-color: var(--bg-light);
   border-radius: 20px;
   padding: 20px;
-  margin: 40px;
+  margin:  0 40px 40px 40px;
 }
-
 .posted__title {
   display: flex;
   align-items: center;

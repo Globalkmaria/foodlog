@@ -1,4 +1,5 @@
 // 로컬 스토리지에 저장하기
+// 불러와서 정렬하는것을 고려해봐야함, 저장할때는 그냥 이어 붙이기?
 (function () {
   const date = document.querySelector('#post__date');
   const day = document.querySelector('#post__day');
@@ -11,16 +12,7 @@
   let posts = [];
   let nextPostId = 0;
 
-  // * 초기설정
-
-  function start() {
-    setTodayDate();
-    getSavedPosts();
-  }
-  window.addEventListener('load', start);
-
-  // * 로컬스토리지
-
+  // * LocalStorage
   function getSavedPosts() {
     posts = JSON.parse(localStorage.getItem('posts')) || [];
     nextPostId = posts.length;
@@ -32,8 +24,12 @@
     localStorage.setItem('posts', JSON.stringify([]));
     posts = [];
     nextPostId = 0;
+    resetPost();
+    postsDiv.innerHTML = '';
   }
+  // ** LocalStorage 전체 초기화
   resetPostsBtn.addEventListener('click', resetLocalStorage);
+
   // * POST 부분
   // ** Post date 선택에 따른 day 변화
   date.addEventListener('change', () => {
@@ -42,7 +38,6 @@
   });
 
   // ** input emoji 한개만 클릭
-  const inputEmojis = document.querySelectorAll('.item__emoji');
   for (const inputEmoji of inputEmojis) {
     inputEmoji.addEventListener('click', (e) => {
       let currentEmoji = e.target;
@@ -141,11 +136,18 @@
   }
   postSaveBtn.addEventListener('click', savePost);
 
+  // ** Post RESET
   function resetPost() {
     const Postform = document.querySelector('#post__form');
     Postform.reset();
     setTodayDate();
   }
+  postResetBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    resetPost();
+  });
+
+  // * Posts
   function makePostedPost(post) {
     const {
       id,
@@ -259,6 +261,7 @@
     return `${year}-${month}-${day}`;
   }
 
+  // * Date/Day
   function changeDay(date) {
     // ex) dateValue = 2021-10-21
     const newDate = new Date(date);
@@ -280,4 +283,20 @@
     date.value = todayDate;
     day.innerHTML = todayDay.slice(0, 3);
   }
+
+  // * Initial Settig
+  function postPosts() {
+    posts.forEach((post) => {
+      const newPost = makePostedPost(post);
+      postsDiv.append(newPost);
+    });
+  }
+
+  function start() {
+    setTodayDate();
+    getSavedPosts();
+    postPosts();
+  }
+
+  window.addEventListener('load', start);
 })();
