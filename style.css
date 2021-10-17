@@ -43,10 +43,12 @@ input {
   margin: 5px 0px 5px 5px;
   font-size: 1em;
   font-weight: 700;
+  transition: 300ms;
 }
 
 .btn:hover {
   background-color: var(--dark-green);
+  transform: scale(1.2);
 }
 
 /*  */
@@ -316,6 +318,7 @@ main {
   font-size: 20px;
   padding: 10px;
   background: none;
+  cursor: pointer;
 }
 
 .posted__delete i {
