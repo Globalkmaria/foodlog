@@ -26,3 +26,19 @@
     const newday = newDate.toLocaleDateString('en-US', { weekday: 'long' });
     day.innerHTML = newday.slice(0, 3);
   }
+  // * 초기설정
+  function setTodayDate() {
+    const today = new Date();
+    const todayDate =
+      today.getFullYear() +
+      '-' +
+      (today.getMonth() + 1) +
+      '-' +
+      today.getDate();
+    const todayDay = new Date(today).toLocaleDateString('en-US', {
+      weekday: 'long',
+    });
+    date.value = todayDate;
+    day.innerHTML = todayDay;
+  }
+
