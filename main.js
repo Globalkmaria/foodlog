@@ -17,3 +17,12 @@
       }
     });
   }
+  // ** 날짜변경
+  date.addEventListener('change', changeDay);
+  function changeDay() {
+    const dateValue = date.value;
+    // ex) dateValue = 2021-10-21
+    const newDate = new Date(dateValue);
+    const newday = newDate.toLocaleDateString('en-US', { weekday: 'long' });
+    day.innerHTML = newday.slice(0, 3);
+  }
