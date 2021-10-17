@@ -209,3 +209,101 @@ main {
   color: #ced4da;
   cursor: pointer;
 }
+
+/* Posts */
+.posts {
+  display: flex;
+  max-width: 1700px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+  background-color: wheat;
+  border-radius: 20px;
+}
+
+.posted-post {
+  width: 450px;
+  background-color: var(--bg-light);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 40px;
+}
+
+.posted__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.posted__date {
+  margin-right: 7px;
+}
+
+.pitems {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.pitem {
+  margin: 10px 5px 7px 5px;
+}
+
+.pitem__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 25px;
+  margin-bottom: 3px;
+}
+
+.pitem__title h4 {
+  font-size: 1.1em;
+}
+
+.pitem__emoji img.checked__emoji {
+  filter: grayscale(0%);
+}
+
+.pitem__emoji img {
+  width: 20px;
+  margin-right: 2px;
+  filter: grayscale(100%);
+  cursor: auto;
+}
+
+.pitem__inner {
+  display: block;
+  width: 100%;
+  padding: 7px;
+  font-size: 0.9em;
+  background: var(--light-green);
+  color: #fff;
+  border-radius: 5px;
+  height: 32px;
+}
+
+.pitem__icons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.pitem__icons i {
+  font-size: 20px;
+  color: #ced4da;
+  cursor: auto;
+}
+
+.water .icon-checked {
+  color: var(--water)
+}
+
+.coffee .icon-checked {
+  color: var(--coffee)
+}
+
+.posted-post:nth-child(2) {
+  color: red;
+}
