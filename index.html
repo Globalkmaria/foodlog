@@ -20,13 +20,12 @@
   </header>
   <main>
     <section class="post">
-      <form name="Post" class="post__contant">
+      <form id="post__form" name="Post" class="post__contant">
         <fieldset>
           <div class="post__title">
-            <input id="date" name="date" type="date" class="post__date" value="2021-10-16" min="2018-01-01"
-              max="2999-12-31" />
+            <input name="date" type="date" id="post__date" value="2021-10-16" min="2018-01-01" max="2999-12-31" />
             <!-- <input name="date" type="text" value="Sat" class="post__day" disabled> -->
-            <span class="post__day">Sat</span>
+            <span id="post__day">Sat</span>
           </div>
           <!-- Breakfast -->
           <div class="items">
@@ -37,16 +36,16 @@
                 </label>
                 <div class="item__emoji">
                   <label>
-                    <input type="radio" name="b_emoji" value="love" class="item__emoji">
-                    <img src="./src/inloveim.png" alt="in love emoji">
+                    <input type="checkbox" id="be1" name="b_emoji" value="love" class="item__emoji">
+                    <img src="./src/love.png" alt="love emoji">
                   </label>
                   <label>
-                    <input type="radio" name="b_emoji" value="smile" class="item__emoji">
-                    <img src="./src/smileim.png" alt="smile emoji">
+                    <input type="checkbox" id="be2" name="b_emoji" value="smile" class="item__emoji">
+                    <img src="./src/smile.png" alt="smile emoji">
                   </label>
                   <label>
-                    <input type="radio" name="b_emoji" value="depressed" class="item__emoji">
-                    <img src="./src/depressedim.png" alt="depressed emoji">
+                    <input type="checkbox" id="be3" name="b_emoji" value="depressed" class="item__emoji">
+                    <img src="./src/depressed.png" alt="depressed emoji">
                   </label>
                 </div>
               </div>
@@ -62,16 +61,16 @@
                 </label>
                 <div class="item__emoji">
                   <label>
-                    <input type="radio" name="l_emoji" value="love" class="item__emoji">
-                    <img src="./src/inloveim.png" alt="in love emoji">
+                    <input type="checkbox" name="l_emoji" id="le1" value="love" class="item__emoji">
+                    <img src="./src/love.png" alt="love emoji">
                   </label>
                   <label>
-                    <input type="radio" name="l_emoji" value="smile" class="item__emoji">
-                    <img src="./src/smileim.png" alt="smile emoji">
+                    <input type="checkbox" name="l_emoji" id="le2" value="smile" class="item__emoji">
+                    <img src="./src/smile.png" alt="smile emoji">
                   </label>
                   <label>
-                    <input type="radio" name="l_emoji" value="depressed" class="item__emoji">
-                    <img src="./src/depressedim.png" alt="depressed emoji">
+                    <input type="checkbox" name="l_emoji" id="le3" value="depressed" class="item__emoji">
+                    <img src="./src/depressed.png" alt="depressed emoji">
                   </label>
                 </div>
               </div>
@@ -87,16 +86,16 @@
                 </label>
                 <div class="item__emoji">
                   <label>
-                    <input type="radio" name="d_emoji" value="love" class="item__emoji">
-                    <img src="./src/inloveim.png" alt="in love emoji">
+                    <input type="checkbox" name="d_emoji" id="de1" value="love" class="item__emoji">
+                    <img src="./src/love.png" alt="love emoji">
                   </label>
                   <label>
-                    <input type="radio" name="d_emoji" value="smile" class="item__emoji">
-                    <img src="./src/smileim.png" alt="smile emoji">
+                    <input type="checkbox" name="d_emoji" id="de2" value="smile" class="item__emoji">
+                    <img src="./src/smile.png" alt="smile emoji">
                   </label>
                   <label>
-                    <input type="radio" name="d_emoji" value="depressed" class="item__emoji">
-                    <img src="./src/depressedim.png" alt="depressed emoji">
+                    <input type="checkbox" name="d_emoji" id="de3" value="depressed" class="item__emoji">
+                    <img src="./src/depressed.png" alt="depressed emoji">
                   </label>
                 </div>
               </div>
@@ -141,16 +140,16 @@
             <div class="water item">
               <div class="item__icons">
                 <label>
-                  <input type="checkbox" name="wicon" id="w1"><i class="fas fa-glass-whiskey"></i>
+                  <input type="checkbox" name="w_icon"><i class="fas fa-glass-whiskey"></i>
                 </label>
                 <label>
-                  <input type="checkbox" name="wicon" id="w2"><i class="fas fa-glass-whiskey"></i>
+                  <input type="checkbox" name="w_icon"><i class="fas fa-glass-whiskey"></i>
                 </label>
                 <label>
-                  <input type="checkbox" name="wicon" id="w3"><i class="fas fa-glass-whiskey"></i>
+                  <input type="checkbox" name="w_icon"><i class="fas fa-glass-whiskey"></i>
                 </label>
                 <label>
-                  <input type="checkbox" name="wicon" id="w4"><i class="fas fa-glass-whiskey"></i>
+                  <input type="checkbox" name="w_icon"><i class="fas fa-glass-whiskey"></i>
                 </label>
               </div>
             </div>
@@ -158,23 +157,23 @@
             <div class="coffee item">
               <div class="item__icons">
                 <label>
-                  <input type="checkbox" name="wicon" id="c1"><i class="fas fa-mug-hot"></i>
+                  <input type="checkbox" name="c_icon"><i class="fas fa-mug-hot"></i>
                 </label>
                 <label>
-                  <input type="checkbox" name="wicon" id="c2"><i class="fas fa-mug-hot"></i>
+                  <input type="checkbox" name="c_icon"><i class="fas fa-mug-hot"></i>
                 </label>
                 <label>
-                  <input type="checkbox" name="wicon" id="c3"><i class="fas fa-mug-hot"></i>
+                  <input type="checkbox" name="c_icon"><i class="fas fa-mug-hot"></i>
                 </label>
                 <label>
-                  <input type="checkbox" name="wicon" id="c4"><i class="fas fa-mug-hot"></i>
+                  <input type="checkbox" name="c_icon"><i class="fas fa-mug-hot"></i>
                 </label>
               </div>
             </div>
           </div>
           <!-- POST BTN -->
           <div class="post__btns">
-            <button class="btn">Save</button>
+            <button class="btn" id="post__save">Save</button>
             <input type="reset" value="Clear" class="btn">
           </div>
         </fieldset>
@@ -184,7 +183,7 @@
     <section class="posts"></section>
 
   </main>
-  <!-- <script src="./main.js"></script> -->
+  <script src="./main.js"></script>
 </body>
 
 </html>

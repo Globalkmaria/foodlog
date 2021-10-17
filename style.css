@@ -37,7 +37,8 @@ input {
   color: var(--bg);
   margin: 5px 0px 5px 5px;
 }
-.btn:hover{
+
+.btn:hover {
   background-color: var(--dark-green);
 }
 
@@ -101,7 +102,7 @@ main {
   margin: 10px;
 }
 
-.post__date {
+#post__date {
   width: 11em;
   margin-right: 7px;
   text-align: end;
@@ -110,7 +111,7 @@ main {
   border: none;
 }
 
-.post__day {
+#post__day {
   font-size: 1.4em;
   width: 2.5em;
   text-align: center;
@@ -118,30 +119,38 @@ main {
   border: none;
   background-color: none;
 }
-.items{
+
+.items {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+
 }
-.item{
- /* margin: 10px 5px 7px 5px; */
- margin: 10px 15px 10px 10px;
+
+.item {
+  /* margin: 10px 5px 7px 5px; */
+  margin: 10px 15px 10px 10px;
 }
-.item{
+
+.item {
   margin-top: 20px;
 }
-.item__title{
+
+.item__title {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
 }
-.item__title label{
+
+.item__title label {
   font-size: 1.5em;
 }
-.item__emoji{
+
+.item__emoji {
   margin-left: 10px;
 }
-.item__emoji [type=radio] { 
+
+.item__emoji [type=checkbox] {
   position: absolute;
   opacity: 0;
   width: 0;
@@ -154,23 +163,28 @@ main {
   filter: grayscale(100%);
   cursor: pointer;
 }
-.item__emoji [type=radio]:checked + img {
+
+.item__emoji [type=checkbox]:checked+img {
   filter: grayscale(0%);
 }
+
 .water [type=checkbox],
-.coffee [type=checkbox]{
+.coffee [type=checkbox] {
   position: absolute;
   opacity: 0;
   width: 0;
   height: 0;
 }
-.water [type=checkbox]:checked +i{
+
+.water [type=checkbox]:checked+i {
   color: #5fa8d3;
 }
-.coffee [type=checkbox]:checked +i{
+
+.coffee [type=checkbox]:checked+i {
   color: #8d5b4c;
 }
-.item__input input{
+
+.item__input input {
   width: 100%;
   padding: 7px;
   font-size: 1.3em;
@@ -180,15 +194,17 @@ main {
   border-radius: 5px;
 }
 
-.post__btns{
+.post__btns {
   align-self: flex-end;
   margin-top: 10px;
 }
-.item__icons{
+
+.item__icons {
   display: flex;
   justify-content: space-around;
 }
-.item__icons i{
+
+.item__icons i {
   font-size: 28px;
   color: #ced4da;
   cursor: pointer;
