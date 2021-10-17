@@ -1,11 +1,22 @@
-// 오늘 날짜 create post date로 초기값으로 만들기
-// date 바뀜에 따른 day 변화
 // 로컬 스토리지에 저장하기
 (function () {
-  // * POST 부분
   const date = document.querySelector('#post__date');
   const day = document.querySelector('#post__day');
   const postSaveBtn = document.querySelector('#post__save');
+  const resetPostsBtn = document.querySelector('#reset-posts');
+  let posts = [];
+  let nextPostId = 0;
+
+  // * 초기설정
+
+  function start() {
+    setTodayDate();
+    getSavedPosts();
+  }
+  window.addEventListener('load', start);
+
+  // * 로컬스토리지
+
   function getSavedPosts() {
     posts = JSON.parse(localStorage.getItem('posts')) || [];
     nextPostId = posts.length;
@@ -19,6 +30,7 @@
     nextPostId = 0;
   }
   resetPostsBtn.addEventListener('click', resetLocalStorage);
+  // * POST 부분
   // ** input emoji 한개만 클릭
   const inputEmojis = document.querySelectorAll('.item__emoji');
   for (const inputEmoji of inputEmojis) {
@@ -52,8 +64,16 @@
   function savePost(e) {
     e.preventDefault();
     const post = getPostValue();
+    if (posts.find((p) => p.date === post.date)) {
+      alert('You have a log for this date!');
+      return;
+    }
+    // 날짜 순서에 맞게 추가하기 내림차순, 이분탐색
+    addPostinPosts(post);
+    saveInLocalStorage(posts);
     resetPost();
   }
+
   function addPostinPosts(post) {
     const postDate = post.date;
     let left = 0;
@@ -108,13 +128,15 @@
           break;
       }
     }
+
+    return post;
   }
   function resetPost() {
     const Postform = document.querySelector('#post__form');
     Postform.reset();
     setTodayDate();
   }
-  // * 초기설정
+
   function setTodayDate() {
     const today = new Date();
     const todayDate =
@@ -129,10 +151,4 @@
     date.value = todayDate;
     day.innerHTML = todayDay;
   }
-
-  function start() {
-    setTodayDate();
-  }
-
-  window.addEventListener('load', start);
 })();
