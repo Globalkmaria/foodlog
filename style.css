@@ -2,12 +2,11 @@
 :root {
   --bg: #fffaf6;
   --bg-light: #ffffff;
-  --dark-green: #1A3D2D;
+  --dark-green: #1a3d2d;
   --light-green: #4f8168;
-  --dark-font: #041D1D;
+  --dark-font: #041d1d;
   --coffee: #8d5b4c;
   --water: #5fa8d3;
-  ;
 }
 
 /* reset */
@@ -93,18 +92,19 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   padding: 20px;
   background-color: rgba(256, 256, 256, 0.9);
   border-radius: 20px;
   margin-top: 20px;
   opacity: 1;
 }
-.fall{
+.fall {
   animation: 1s linear falldown;
 }
-@keyframes falldown{
-  100%{
+@keyframes falldown {
+  100% {
     transform: scale(0.5) translateY(600px);
     opacity: 0;
   }
@@ -174,7 +174,7 @@ main {
   margin-left: 10px;
 }
 
-.item__emoji [type=checkbox] {
+.item__emoji [type='checkbox'] {
   position: absolute;
   opacity: 0;
   width: 0;
@@ -188,19 +188,19 @@ main {
   cursor: pointer;
 }
 
-.item__emoji [type=checkbox]:checked+img {
+.item__emoji [type='checkbox']:checked + img {
   filter: grayscale(0%);
 }
 
-.water [type=checkbox],
-.coffee [type=checkbox] {
+.water [type='checkbox'],
+.coffee [type='checkbox'] {
   position: absolute;
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-.water [type=checkbox]:checked+i {
+.water [type='checkbox']:checked + i {
   color: var(--water);
   animation: 1s linear 0s shake;
   transition: 500ms;
@@ -232,10 +232,10 @@ main {
   }
 }
 
-.coffee [type=checkbox]:checked+i {
+.coffee [type='checkbox']:checked + i {
   color: var(--coffee);
   animation: 1s linear 0s moveup;
-  transition: 500ms
+  transition: 500ms;
 }
 
 @keyframes moveup {
@@ -249,11 +249,11 @@ main {
   40% {
     transform: skew(-15deg, -15deg);
   }
-  
+
   60% {
     transform: skew(10deg, 10deg);
   }
-  
+
   80% {
     transform: skew(-10deg, -10deg);
   }
@@ -302,7 +302,8 @@ main {
 }
 
 .posted-post {
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
   background-color: var(--bg-light);
   border-radius: 20px;
   padding: 20px;
@@ -397,11 +398,11 @@ main {
 }
 
 .water .icon-checked {
-  color: var(--water)
+  color: var(--water);
 }
 
 .coffee .icon-checked {
-  color: var(--coffee)
+  color: var(--coffee);
 }
 
 .posted-post:nth-child(2) {
