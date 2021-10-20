@@ -20,7 +20,7 @@
     localStorage.setItem('posts', JSON.stringify(posts));
   }
   function resetLocalStorage() {
-    localStorage.setItem('posts', JSON.stringify([]));
+    localStorage.clear();
     posts = [];
     nextPostId = 0;
     resetPost();
