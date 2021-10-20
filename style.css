@@ -54,6 +54,7 @@ input {
 body {
   padding: 30px;
   background-color: var(--bg);
+  min-width: 600px;
 }
 
 header {
@@ -67,7 +68,7 @@ header {
 
 .header__title {
   font-size: 30px;
-  margin: 30px 30px 0px 30px;
+  margin: 0px 30px 30px 30px;
 }
 
 .header__title h1 {
@@ -315,7 +316,7 @@ main {
   visibility: hidden;
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 17.5px;
   font-size: 20px;
   padding: 10px;
   background: none;
@@ -407,4 +408,33 @@ main {
 
 .posted-post:nth-child(2) {
   color: red;
+}
+
+@media (max-width: 650px) {
+  body .btn {
+    padding: 0.5em;
+    font-size: 0.7em;
+  }
+  header .header__title h1 {
+    font-size: 1.6em;
+  }
+  .post .item__title label {
+    font-size: 1.2em;
+    font-weight: 700;
+  }
+  .post .item__emoji img {
+    width: 20px;
+    margin-right: 2px;
+  }
+  .posted-post .posted__title {
+    font-size: 1.2em;
+  }
+  .posted-post .pitem__title h4 {
+    font-size: 0.9em;
+  }
+  .posted-post .posted__delete {
+    visibility: visible;
+    top: 10px;
+    font-size: 15px;
+  }
 }
