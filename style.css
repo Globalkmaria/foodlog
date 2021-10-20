@@ -413,7 +413,10 @@ main {
 @media (max-width: 650px) {
   body .btn {
     padding: 0.5em;
-    font-size: 0.7em;
+    font-size: 1.2em;
+  }
+  .header__btns #reset-posts {
+    margin-bottom: 30px;
   }
   header .header__title h1 {
     font-size: 1.6em;
@@ -428,13 +431,13 @@ main {
   }
   .posted-post .posted__title {
     font-size: 1.2em;
+    min-height: 2em;
   }
   .posted-post .pitem__title h4 {
     font-size: 0.9em;
   }
   .posted-post .posted__delete {
     visibility: visible;
-    top: 10px;
-    font-size: 15px;
+    top: 15px;
   }
 }
