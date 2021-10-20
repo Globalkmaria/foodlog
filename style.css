@@ -305,6 +305,7 @@ main {
 .posted-post {
   width: 100%;
   max-width: 450px;
+  min-width: 400px;
   background-color: var(--bg-light);
   border-radius: 20px;
   padding: 20px;
