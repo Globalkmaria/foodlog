@@ -8,12 +8,12 @@ Project Link: <https://globalkmaria.github.io/foodlog/>
 ## Table of contents
 
 - [Technologies](#technologies)
-- [What is Bookmemo](#What-is-Food-log-&-plan)
+- [What is Food log & plan?](#What-is-Food-log-&-plan)
 - [Why Food log & plan?](#Why-Food-log-&-plan)
 
 ## Technologies
 
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"  width="100" height="40"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"  width="100" height="40"> <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"  width="100" height="40">
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"  width="100" height="40"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"  width="100" height="40"> <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"  width="130" height="40">
 
 ## What is Food log & plan?
 
@@ -27,6 +27,8 @@ You can track Breakfast, Lunch, Dinner, Late-night Meal, Snacks, Drinks, Water, 
 3. Date is already set up to make your log faster and easier!
 4. You can check your mood for each meal! It will help you to remind how the meal was or the day was when you track back :)
 5. Just one button to reset Everything!
+
+   <br>
    <br>
    <img src="./src/createlog.png" width="500">
    <img src="./src/logs.png" width="500">
