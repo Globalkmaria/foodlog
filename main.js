@@ -167,7 +167,6 @@
       w_icon,
       c_icon,
     } = post;
-    const postedDate = makePostedDate(date);
 
     const postedPost = document.createElement('div');
     postedPost.setAttribute('id', id);
@@ -187,8 +186,8 @@
     const postedTitle = document.createElement('div');
     postedTitle.setAttribute('class', 'posted__title');
     postedTitle.innerHTML = `
-    <span class="posted__date">${postedDate}</span>
-    <span class="posted__day">${changeDay(postedDate)}</span>`;
+    <span class="posted__date">${makePostedDate(date)}</span>
+    <span class="posted__day">${changeDay(dashedDate(date))}</span>`;
     postedPost.append(postedTitle);
 
     const pitems = document.createElement('div');
@@ -273,6 +272,13 @@
     const month = date.slice(4, 6);
     const day = date.slice(6);
     return `${year}. ${month}. ${day}`;
+  }
+  function dashedDate(date) {
+    date = String(date);
+    const year = date.slice(0, 4);
+    const month = date.slice(4, 6);
+    const day = date.slice(6);
+    return `${year}-${month}-${day}`;
   }
 
   // * Date/Day
