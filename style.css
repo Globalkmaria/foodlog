@@ -300,6 +300,7 @@ main {
   background-color: wheat;
   border-radius: 20px;
   padding-top: 40px;
+  width: 100%;
 }
 
 .posted-post {
@@ -385,7 +386,7 @@ main {
   background: var(--light-green);
   color: #fff;
   border-radius: 5px;
-  height: 32px;
+  min-height: 32px;
 }
 
 .pitem__icons {
