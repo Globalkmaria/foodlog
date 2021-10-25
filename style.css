@@ -448,3 +448,7 @@ main {
   margin: auto;
   width: 320px;
 }
+p {
+  text-align: center;
+  margin-top: 30 px;
+}
