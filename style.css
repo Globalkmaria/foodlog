@@ -443,3 +443,8 @@ main {
     top: 15px;
   }
 }
+
+.ad-banner {
+  margin: auto;
+  width: 320px;
+}
