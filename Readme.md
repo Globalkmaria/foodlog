@@ -3,7 +3,7 @@
 ## Project Link
 
 You can try the project.
-Project Link: <https://globalkmaria.github.io/foodlog/>
+Project Link: <http://www.foodlog.ga/>
 
 ## Table of contents
 
