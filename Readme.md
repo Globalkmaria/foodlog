@@ -1,10 +1,5 @@
 # :cookie: Food log & plan :green_salad:
 
-## Project Link
-
-You can try the project.
-Project Link: <http://www.foodlog.ga/>
-
 ## Table of contents
 
 - [Technologies](#technologies)
