@@ -1,10 +1,17 @@
 # :cookie: Food log & plan :green_salad:
+You can try the project.
+Project Link: <https://globalkmaria.github.io/foodlog/>
 
 ## Table of contents
 
+- [Project duration](#Project-duration)
 - [Technologies](#technologies)
 - [What is Food log & plan?](#What-is-Food-log-&-plan)
 - [Why Food log & plan?](#Why-Food-log-&-plan)
+
+
+## Project duration
+2021/Oct/18 - 2021/Oct/20
 
 ## Technologies
 
